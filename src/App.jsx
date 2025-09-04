@@ -124,8 +124,8 @@ export default function MarketplaceOnePager() {
       <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-purple-200">
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-full bg-purple-700 text-white grid place-items-center font-semibold">U</div>
-            <div className="text-xl font-semibold">UniqNex360 • Marketplace Command Center</div>
+            {/* <div className="w-9 h-9 rounded-full bg-purple-700 text-white grid place-items-center font-semibold">U</div> */}
+            <div className="text-xl font-semibold">Marketlynxe</div>
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#features" className="hover:text-purple-900">Features</a>
@@ -403,13 +403,13 @@ export default function MarketplaceOnePager() {
               <button type="button" className="rounded-2xl bg-purple-700 text-white px-5 py-3 text-sm font-medium hover:bg-purple-800 md:col-span-2">Request Demo</button>
             </form>
           </div>
-          <p className="text-xs text-purple-500 mt-4">By submitting, you agree to be contacted about UniqNex360 services. You can opt out anytime.</p>
+          {/* <p className="text-xs text-purple-500 mt-4">By submitting, you agree to be contacted about UniqNex360 services. You can opt out anytime.</p> */}
         </div>
       </section>
 
       {/* FOOTER */}
       <footer className="py-10 text-center text-sm text-purple-500">
-        © {new Date().getFullYear()} UniqNex360. All rights reserved.
+        © {new Date().getFullYear()} Marketlynxe. All rights reserved.
       </footer>
     </div>
   );
