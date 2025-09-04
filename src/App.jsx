@@ -121,12 +121,15 @@ export default function MarketplaceOnePager() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-purple-50 to-white text-purple-900">
       {/* NAVBAR */}
-      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-purple-200">
-        <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            {/* <div className="w-9 h-9 rounded-full bg-purple-700 text-white grid place-items-center font-semibold">U</div> */}
-            <div className="text-xl font-semibold">Marketlynxe</div>
-          </div>
+     <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-purple-200 h-20">
+  <div className="mx-auto max-w-7xl px-6 flex items-center justify-between h-full">
+    <div className="flex items-center h-full">
+      <img 
+        src="/src/Light purple logo.png" 
+        alt="Marketlynxe Logo" 
+        className="h-16 w-auto mx-auto"
+      />
+    </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#features" className="hover:text-purple-900">Features</a>
             <a href="#integrations" className="hover:text-purple-900">Integrations</a>
@@ -403,7 +406,7 @@ export default function MarketplaceOnePager() {
               <button type="button" className="rounded-2xl bg-purple-700 text-white px-5 py-3 text-sm font-medium hover:bg-purple-800 md:col-span-2">Request Demo</button>
             </form>
           </div>
-          {/* <p className="text-xs text-purple-500 mt-4">By submitting, you agree to be contacted about UniqNex360 services. You can opt out anytime.</p> */}
+          <p className="text-xs text-purple-500 mt-4"></p>
         </div>
       </section>
 
