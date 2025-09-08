@@ -59,13 +59,13 @@ const features = [
       "View and act on all inbound orders from every marketplace in one screen. Print labels, split/merge shipments, and automate status updates.",
   },
   {
-    icon: <Database className="w-6 h-6" />,
+    icon: <CircleDollarSign className="w-6 h-6" />,
     title: "Financial Reconciliation & Profit Analysis",
     text:
       "Your P&L rolls up fees, taxes, refunds, promotions, shipping & ad cost — showing net margin by SKU, brand, and marketplace. Stop guessing profitability; see it clearly.",
   },
   {
-    icon: <CircleDollarSign className="w-6 h-6" />,
+    icon: <Database className="w-6 h-6" />,
     title: "Ad Performance & ROI Insights",
     text:
       "Track CPC, ad spend vs ROI, impressions, clicks, conversions — all tied to individual SKUs and channels.",
@@ -145,14 +145,24 @@ export default function MarketplaceOnePager() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-purple-50 to-white text-purple-900">
       {/* NAVBAR */}
-      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-purple-200 h-20">
+      <header  id="hero"  className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-purple-200 h-20">
         <div className="mx-auto max-w-7xl px-6 flex items-center justify-between h-full">
           <div className="flex items-center h-full">
+            <a
+  href="#"
+  onClick={(e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }}
+>
+
             <img 
               src="/shared image.jpeg" 
               alt="Marketlynxe Logo" 
               className="h-16 w-auto mx-auto"
             />
+            </a>
+
           </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#features" className="hover:text-purple-900">Features</a>
@@ -194,12 +204,12 @@ export default function MarketplaceOnePager() {
           Control listings, pricing & inventory cross-marketplace with real-time sync.
         </li>
         <li className="flex items-start gap-2">
-          <Check className="w-6 h-4 mt-0.5 text-purple-700" />
+          <Check className="w-4 h-4 mt-0.5 text-purple-700" />
           Implement custom business rules tailored to vendors and product categories,
           including custom formulas for COGS, pricing, profit, and other calculations.
         </li>
         <li className="flex items-start gap-2">
-          <Check className="w-5 h-4 mt-0.5 text-purple-700" />
+          <Check className="w-4 h-4 mt-0.5 text-purple-700" />
           Automate order fulfillment with shipping integrations including ShipStation,
           Shippo, Easyship, ShipHero, and more.
         </li>
@@ -297,13 +307,42 @@ export default function MarketplaceOnePager() {
           <p className="mt-4 text-sm text-purple-600">Plus custom connectors for regional marketplaces on request.</p>
         </div>
       </section>
+      {/* VIDEO / DEMO SECTION */}
+<section className="py-16 bg-purple-100">
+  <div className="mx-auto max-w-7xl px-6 text-center">
+    <h2 className="text-2xl md:text-3xl font-semibold text-purple-900">
+      Stop juggling logins.
+    </h2>
+    <p className="mt-4 text-purple-700/85 text-lg">
+      See how MarketLynxe unifies marketplaces, listings, ads, and shipping into one holistic dashboard.
+    </p>
+    <p className="mt-2 text-purple-700/85 text-lg">
+      Watch the demo to experience the platform in action.
+    </p>
+
+    <div className="mt-6 flex justify-center">
+      <div className="relative w-full lg:w-4/5 xl:w-3/4 2xl:w-2/3" style={{ paddingBottom: '56.25%' }}>
+        <iframe
+          src="https://player.vimeo.com/video/1116787176"
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowFullScreen
+          title="Demo Video"
+          className="absolute top-0 left-0 w-full h-full rounded-2xl"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       {/* FEATURES GRID */}
       <section id="features" className="py-16">
         <div className="mx-auto max-w-7xl px-6">
           <p className="text-xs uppercase tracking-wider text-purple-500">Capabilities</p>
           <h2 className="text-2xl md:text-3xl font-semibold mt-2">Everything in one place</h2>
-          <div className="grid md:grid-cols-3 gap-6 mt-8">
+          <div className="grid md:grid-cols-4 gap-6 mt-8">
             {features.map((f) => (
               <div key={f.title} className="rounded-3xl border p-6 hover:shadow-md transition">
                 <div className="w-10 h-10 rounded-xl bg-purple-700 text-white grid place-items-center">
@@ -419,12 +458,12 @@ export default function MarketplaceOnePager() {
             MarketLynxe is inspired by the best tools in the industry but designed to keep things simple. With quick channel setup and seamless API connections, your team can get started quickly without technical headaches. Everything you need to connect marketplaces, unify data, and manage operations comes together in one comprehensive command center.
           </p>
           
-          <div className="grid md:grid-cols-3 gap-6 items-start mb-12">
+          <div className="grid md:grid-cols-2 gap-6 items-start mb-12">
             <div className="rounded-3xl border p-6">
               <h3 className="font-semibold">Shipping Integrations</h3>
               <p className="mt-2 text-sm text-purple-700/85">Generate labels directly from your carrier and pull tracking details and shipping charges into MarketLynxe, so you can manage fulfillment without leaving the platform.</p>
               <div className="mt-4 flex flex-wrap gap-2 text-xs">
-                {['ShipStation', 'Shippo', 'Easyship', 'ShipHero', 'UPS', 'FedEx'].map((c) => (
+                {['UPS', 'FedEx', 'USPS', 'DHL', 'Shippo API'].map((c) => (
                   <span key={c} className="rounded-full border px-3 py-1">{c}</span>
                 ))}
               </div>
@@ -432,12 +471,8 @@ export default function MarketplaceOnePager() {
             <div className="rounded-3xl border p-6">
               <h3 className="font-semibold">Inventory Rules</h3>
               <p className="mt-2 text-sm text-purple-700/85">Set buffers, safety stock, and marketplace-specific thresholds to keep your listings accurate and prevent overselling. With multi-warehouse support, kitting, and bundle management, MarketLynxe ensures your inventory stays synchronized and reliable across every channel.</p>
-              <ul className="mt-4 space-y-2 text-sm text-purple-700/85">
-                <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Multi-warehouse support</li>
-                <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Kitting & bundles</li>
-                <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Backorder logic</li>
-              </ul>
             </div>
+          
           </div>
 
           {/* TESTIMONIALS */}
