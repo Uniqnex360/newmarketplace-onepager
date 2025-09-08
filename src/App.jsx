@@ -204,12 +204,12 @@ export default function MarketplaceOnePager() {
           Control listings, pricing & inventory cross-marketplace with real-time sync.
         </li>
         <li className="flex items-start gap-2">
-          <Check className="w-4 h-4 mt-0.5 text-purple-700" />
+          <Check className=" h-4 mt-0.5 text-purple-700" />
           Implement custom business rules tailored to vendors and product categories,
           including custom formulas for COGS, pricing, profit, and other calculations.
         </li>
         <li className="flex items-start gap-2">
-          <Check className="w-4 h-4 mt-0.5 text-purple-700" />
+          <Check className=" h-4 mt-0.5 text-purple-700" />
           Automate order fulfillment with shipping integrations including ShipStation,
           Shippo, Easyship, ShipHero, and more.
         </li>
