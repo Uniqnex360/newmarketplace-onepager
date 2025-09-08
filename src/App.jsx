@@ -125,7 +125,7 @@ export default function MarketplaceOnePager() {
   <div className="mx-auto max-w-7xl px-6 flex items-center justify-between h-full">
     <div className="flex items-center h-full">
       <img 
-  src="/logo.png" 
+  src="/shared image.jpeg" 
   alt="Marketlynxe Logo" 
   className="h-16 w-auto mx-auto"
 />
