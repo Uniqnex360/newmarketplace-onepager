@@ -27,8 +27,8 @@ const integrations = [
   { name: "Amazon 1P & 3P", icon: <ShoppingCart className="w-5 h-5" /> },
   { name: "Walmart", icon: <ShoppingCart className="w-5 h-5" /> },
   { name: "eBay", icon: <Globe2 className="w-5 h-5" /> },
-  { name: "TikTok Shop", icon: <Globe2 className="w-5 h-5" /> },
-  { name: "Shopify", icon: <Globe2 className="w-5 h-5" /> },
+  { name: "Wayfair", icon: <Globe2 className="w-5 h-5" /> },
+  { name: "HomeDepot", icon: <Globe2 className="w-5 h-5" /> },
   { name: "More via API", icon: <Settings className="w-5 h-5" /> },
 ];
 
@@ -42,60 +42,60 @@ const metrics = [
 const features = [
   {
     icon: <BarChart3 className="w-6 h-6" />,
-    title: "Executive Analytics Dashboard",
+    title: "Unified Dashboard & Automation",
     text:
-      "All marketplaces in one view — orders, revenue, expense, net profit, ROI, and hour-by-hour trends. Slice by marketplace, channel, brand, category, or SKU.",
+      "Get a real-time executive view of your business: orders, revenue, expenses, refunds, net profit — all reconciled and automated. Say goodbye to manual imports and formula spreadsheets.",
   },
   {
     icon: <Boxes className="w-6 h-6" />,
-    title: "Centralized Listings Control",
+    title: "Multi-Marketplace Listings & Inventory Sync",
     text:
-      "Create, edit, enrich, and publish product listings everywhere from a single place. Enforce attributes, media, SEO, and compliance before it goes live.",
+      "Keep a single catalog, sync pricing and stock, prevent overselling, and let us handle your listings on Seller Central and Vendor Central.",
   },
   {
     icon: <PackageCheck className="w-6 h-6" />,
-    title: "Orders & Fulfillment",
+    title: "Order & Fulfillment Hub",
     text:
-      "See orders from all channels, print labels, split/merge, set rules, and trigger notifications. Take action without hopping between tabs.",
+      "View and act on all inbound orders from every marketplace in one screen. Print labels, split/merge shipments, and automate status updates.",
   },
   {
     icon: <Database className="w-6 h-6" />,
-    title: "Inventory & Pricing Sync",
+    title: "Financial Reconciliation & Profit Analysis",
     text:
-      "Real-time stock sync, backorder thresholds, buffers, and price rules to keep listings accurate and prevent overselling.",
+      "Your P&L rolls up fees, taxes, refunds, promotions, shipping & ad cost — showing net margin by SKU, brand, and marketplace. Stop guessing profitability; see it clearly.",
   },
   {
     icon: <CircleDollarSign className="w-6 h-6" />,
-    title: "Fee & P&L Insights",
+    title: "Ad Performance & ROI Insights",
     text:
-      "Channel fees, taxes, shipping, promos and COGS rolled into clean P&L by SKU, marketplace, and time period.",
+      "Track CPC, ad spend vs ROI, impressions, clicks, conversions — all tied to individual SKUs and channels.",
   },
   {
     icon: <ShieldCheck className="w-6 h-6" />,
-    title: "Buy Box & Policy Guardrails",
+    title: "Buy Box & Suppression Monitoring",
     text:
-      "Monitor Buy Box signals, price parity and policy health. Catch content issues and listing suppressions early.",
+      "Track Buy Box win rates, suppression alerts, price parity violations, and listing health. Understand which SKUs need attention to win visibility and sales.",
   },
   {
     icon: <BellRing className="w-6 h-6" />,
-    title: "Alerts & Notifications",
+    title: "Intelligent Alerts & Forecasting",
     text:
-      "Low-stock alerts for inventory restocking. Notifications for pending or delayed orders.",
+      "Get proactive alerts on low stock, delayed orders, abnormal refunds, suppressed listings. Forecast demand, identify low-moving SKUs, and rebalance inventory in advance.",
   },
   {
     icon: <Megaphone className="w-6 h-6" />,
-    title: "Advertisement Report",
+    title: "Role-Based Access",
     text:
-      "Performance analysis based on Cost Per Click (CPC). Advertisement metrics tracking across channels.",
+      "Control user permissions with role-based access — manage who can edit listings, fulfill orders, update pricing, and view financial data.",
   },
 ];
 
 const steps = [
-  { step: 1, title: "Connect Marketplaces", text: "Amazon (1P/3P), Walmart, eBay, TikTok and more via native connectors or API." },
-  { step: 2, title: "Unify Catalog & Inventory", text: "Map attributes, standardize media, and sync inventory & pricing rules." },
-  { step: 3, title: "Launch Listings", text: "Publish once, syndicate everywhere with validations and approvals." },
-  { step: 4, title: "Manage Orders", text: "Pick, pack, ship with carrier integrations and automated emails to buyer & seller." },
-  { step: 5, title: "Track & Optimize", text: "Executive dashboard for orders, revenue, expense, net profit, and Buy Box insights." },
+  { step: 1, title: "Connect Channels", text: "Link Amazon (1P & 3P), Walmart, eBay, and other channels using API." },
+  { step: 2, title: "Unify Your Catalog", text: "Map attributes, standardize data, sync inventory and pricing, and connect products to the right marketplace categories." },
+  { step: 3, title: "Launch Everywhere", text: "Publish once, sell everywhere." },
+  { step: 4, title: "Manage with Ease", text: "Centralized orders, fulfillment, and customer communication." },
+  { step: 5, title: "Scale Smarter", text: "Executive dashboards + alerts + ad insights = growth on autopilot." },
 ];
 
 const faqs = [
@@ -117,20 +117,43 @@ const faqs = [
   },
 ];
 
+const testimonials = [
+  {
+    quote: "With MarketLynxe, all my marketplaces are finally in one place. I can see orders, ads, and profits at a glance, and spend more time growing my business instead of managing logins.",
+    author: "7-figure Amazon Seller",
+  },
+  {
+    quote: "MarketLynxe replaced 5 dashboards, and dozens of manual reports — saving us ~20 hours/week in seeing where our business stands.",
+    author: "Amazon/eBay seller",
+  },
+  {
+    quote: "Finally, a single dashboard that actually shows profit — not just revenue. This changed how we make decisions every day.",
+    author: "Multi-Channel Distributor",
+  },
+];
+
+const whyMarketLynxe = [
+  { icon: "⚡", title: "Save Time, Eliminate Chaos", desc: "One login replaces 5+ dashboards." },
+  { icon: "📊", title: "Run on Data, Not Guesswork", desc: "See true profitability across every SKU and channel." },
+  { icon: "🚀", title: "Scale Without Risk", desc: "Automated stock, pricing, and compliance guardrails." },
+  { icon: "🔔", title: "Stay Ahead of Problems", desc: "Instant alerts for stockouts, delays, and suppressed listings." },
+  { icon: "🤝", title: "Built for Teams", desc: "Role-based and privacy/access controls make it enterprise-ready." },
+  { icon: "🌍", title: "Future-Proof", desc: "Add new channels and integrations as your business grows." },
+];
+
 export default function MarketplaceOnePager() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-purple-50 to-white text-purple-900">
       {/* NAVBAR */}
-     <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-purple-200 h-20">
-  <div className="mx-auto max-w-7xl px-6 flex items-center justify-between h-full">
-    <div className="flex items-center h-full">
-      <img 
-  src="/shared image.jpeg" 
-  alt="Marketlynxe Logo" 
-  className="h-16 w-auto mx-auto"
-/>
-
-    </div>
+      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-purple-200 h-20">
+        <div className="mx-auto max-w-7xl px-6 flex items-center justify-between h-full">
+          <div className="flex items-center h-full">
+            <img 
+              src="/shared image.jpeg" 
+              alt="Marketlynxe Logo" 
+              className="h-16 w-auto mx-auto"
+            />
+          </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#features" className="hover:text-purple-900">Features</a>
             <a href="#integrations" className="hover:text-purple-900">Integrations</a>
@@ -150,23 +173,23 @@ export default function MarketplaceOnePager() {
         <div className="mx-auto max-w-7xl px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              One dashboard to run <span className="text-purple-700">all marketplaces</span>
+              One Command Center. <span className="text-purple-700">Every Marketplace.</span>
             </h1>
             <p className="mt-4 text-lg text-purple-700/85">
-              Connect Amazon (1P/3P), Walmart, eBay, TikTok and more. See orders, revenue, expense, and net profit at a glance — control listings, manage orders, and ship without juggling multiple logins.
+              Connect Amazon (1P/3P), Walmart, eBay, Wayfair, HomeDepot, and more. Instantly track orders, revenue, expenses, and net profit — while controlling listings, managing orders, shipping, and fulfillment without juggling multiple logins. Say goodbye to fragmented tools and spreadsheets. MarketLynxe unifies everything into 360-degree view — including ad performance insights, Buy Box tracking, and seamless third-party integrations with shipping, warehouses, and more — so you never miss an opportunity to grow.
             </p>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <a href="#demo" className="inline-flex items-center gap-2 rounded-2xl bg-purple-700 text-white px-5 py-3 text-sm font-medium hover:bg-purple-800">
-                <Zap className="w-4 h-4" /> Book a Live Demo
+                <Zap className="w-4 h-4" /> Book a Demo
               </a>
               <a href="#features" className="inline-flex items-center gap-2 rounded-2xl border border-purple-300 px-5 py-3 text-sm font-medium hover:bg-purple-50">
-                Explore Features <ChevronRight className="w-4 h-4" />
+                See It in Action <ChevronRight className="w-4 h-4" />
               </a>
             </div>
             <div className="mt-8 flex items-center gap-6 text-sm text-purple-600">
               <div className="flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> Role-based access</div>
-              <div className="flex items-center gap-2"><Workflow className="w-4 h-4" /> Automation rules</div>
-              <div className="flex items-center gap-2"><Search className="w-4 h-4" /> Advanced filters</div>
+              <div className="flex items-center gap-2"><Workflow className="w-4 h-4" /> Custom business rules</div>
+              <div className="flex items-center gap-2"><Search className="w-4 h-4" /> Buy Box tracking</div>
             </div>
           </div>
 
@@ -321,35 +344,68 @@ export default function MarketplaceOnePager() {
         </div>
       </section>
 
+      {/* WHY MARKETLYNXE */}
+      <section className="py-16 bg-purple-50">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-2xl md:text-3xl font-semibold text-center">Why MarketLynxe?</h2>
+          <div className="grid md:grid-cols-3 gap-6 mt-8">
+            {whyMarketLynxe.map((item) => (
+              <div key={item.title} className="rounded-3xl border bg-white p-6 text-center">
+                <div className="text-3xl mb-3">{item.icon}</div>
+                <h3 className="font-semibold mb-2">{item.title}</h3>
+                <p className="text-sm text-purple-700/85">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SOCIAL PROOF / REFERENCES */}
       <section className="py-14 bg-white border-t">
-        <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-3 gap-6 items-start">
-          <div className="rounded-3xl border p-6">
-            <h3 className="font-semibold">Built for modern marketplace teams</h3>
-            <p className="mt-2 text-sm text-purple-700/85">Inspired by best-in-class tools like the ones you know, with the simplicity of a single control center.</p>
-            <ul className="mt-4 space-y-2 text-sm text-purple-700/85">
-              <li className="flex items-center gap-2"><Check className="w-4 h-4" /> 10-minute channel setup</li>
-              <li className="flex items-center gap-2"><Check className="w-4 h-4" /> API & webhook support</li>
-              <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Audit trails & approvals</li>
-            </ul>
-          </div>
-          <div className="rounded-3xl border p-6">
-            <h3 className="font-semibold">Shipping Integrations</h3>
-            <p className="mt-2 text-sm text-purple-700/85">Connect your carriers to generate labels and tracking seamlessly from the same screen.</p>
-            <div className="mt-4 flex flex-wrap gap-2 text-xs">
-              {['UPS', 'FedEx', 'USPS', 'DHL', 'Shippo API'].map((c) => (
-                <span key={c} className="rounded-full border px-3 py-1">{c}</span>
-              ))}
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8">Built for Marketplaces to Drive Digital Growth</h2>
+          <p className="text-center text-purple-700/85 mb-12 max-w-3xl mx-auto">
+            MarketLynxe is inspired by the best tools in the industry but designed to keep things simple. With quick channel setup and seamless API connections, your team can get started quickly without technical headaches. Everything you need to connect marketplaces, unify data, and manage operations comes together in one comprehensive command center.
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-6 items-start mb-12">
+            <div className="rounded-3xl border p-6">
+              <h3 className="font-semibold">Shipping Integrations</h3>
+              <p className="mt-2 text-sm text-purple-700/85">Generate labels directly from your carrier and pull tracking details and shipping charges into MarketLynxe, so you can manage fulfillment without leaving the platform.</p>
+              <div className="mt-4 flex flex-wrap gap-2 text-xs">
+                {['ShipStation', 'Shippo', 'Easyship', 'ShipHero', 'UPS', 'FedEx'].map((c) => (
+                  <span key={c} className="rounded-full border px-3 py-1">{c}</span>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-3xl border p-6">
+              <h3 className="font-semibold">Inventory Rules</h3>
+              <p className="mt-2 text-sm text-purple-700/85">Set buffers, safety stock, and marketplace-specific thresholds to keep your listings accurate and prevent overselling. With multi-warehouse support, kitting, and bundle management, MarketLynxe ensures your inventory stays synchronized and reliable across every channel.</p>
+              <ul className="mt-4 space-y-2 text-sm text-purple-700/85">
+                <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Multi-warehouse support</li>
+                <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Kitting & bundles</li>
+                <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Backorder logic</li>
+              </ul>
+            </div>
+            <div className="rounded-3xl border p-6">
+              <h3 className="font-semibold">Custom Business Rules</h3>
+              <p className="mt-2 text-sm text-purple-700/85">Implement custom business rules tailored to vendors and product categories, including custom formulas for COGS, pricing, profit, and other calculations.</p>
+              <ul className="mt-4 space-y-2 text-sm text-purple-700/85">
+                <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Custom COGS formulas</li>
+                <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Pricing automation</li>
+                <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Category-specific rules</li>
+              </ul>
             </div>
           </div>
-          <div className="rounded-3xl border p-6">
-            <h3 className="font-semibold">Inventory Rules</h3>
-            <p className="mt-2 text-sm text-purple-700/85">Set buffers, safety stock, and marketplace-specific thresholds to avoid overselling.</p>
-            <ul className="mt-4 space-y-2 text-sm text-purple-700/85">
-              <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Multi-warehouse support</li>
-              <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Kitting & bundles</li>
-              <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Backorder logic</li>
-            </ul>
+
+          {/* TESTIMONIALS */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="rounded-3xl border p-6 bg-purple-50">
+                <p className="text-sm text-purple-700/85 italic">"{testimonial.quote}"</p>
+                <p className="mt-4 text-sm font-medium">— {testimonial.author}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -359,14 +415,14 @@ export default function MarketplaceOnePager() {
         <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold">Ready to centralize your marketplaces?</h2>
-            <p className="mt-2 text-purple-100">We’ll tailor the demo to your catalog size, channels, and fulfillment model.</p>
+            <p className="mt-2 text-purple-100">We'll tailor the demo to your catalog size, channels, and fulfillment model.</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="#contact" className="rounded-2xl bg-white text-purple-700 px-5 py-3 text-sm font-medium hover:bg-purple-50">Get Started</a>
               <a href="#faq" className="rounded-2xl border border-white/20 px-5 py-3 text-sm font-medium hover:bg-white/10">See FAQs</a>
             </div>
           </div>
           <div className="rounded-3xl bg-white/10 border border-white/10 p-6">
-            <div className="text-sm text-purple-100">What you’ll see</div>
+            <div className="text-sm text-purple-100">What you'll see</div>
             <ul className="mt-3 space-y-2 text-sm">
               <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Live dashboard walkthrough</li>
               <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Listing creation & validation</li>
@@ -396,24 +452,64 @@ export default function MarketplaceOnePager() {
       <section id="contact" className="py-14 border-t">
         <div className="mx-auto max-w-4xl px-6">
           <div className="rounded-3xl border p-6">
-            <h2 className="text-2xl font-semibold">Book a demo</h2>
-            <p className="mt-2 text-sm text-purple-700/85">Tell us a bit about your catalog and channels — we’ll tailor the walkthrough.</p>
+            <h2 className="text-2xl font-semibold">Book a Demo</h2>
+            <p className="mt-2 text-sm text-purple-700/85">
+              Tell us a bit about your business and we'll tailor the demo to your needs.
+            </p>
             <form className="mt-6 grid md:grid-cols-2 gap-4">
-              <input className="rounded-xl border px-4 py-3 text-sm" placeholder="Name" />
-              <input className="rounded-xl border px-4 py-3 text-sm" placeholder="Work email" />
-              <input className="rounded-xl border px-4 py-3 text-sm" placeholder="Company" />
-              <input className="rounded-xl border px-4 py-3 text-sm" placeholder="# of SKUs" />
-              <input className="rounded-xl border px-4 py-3 text-sm md:col-span-2" placeholder="Marketplaces (Amazon, Walmart, eBay, TikTok...)" />
-              <button type="button" className="rounded-2xl bg-purple-700 text-white px-5 py-3 text-sm font-medium hover:bg-purple-800 md:col-span-2">Request Demo</button>
+              {/* Name & Email */}
+              <input
+                className="rounded-xl border px-4 py-3 text-sm"
+                placeholder="Full Name"
+                required
+              />
+              <input
+                className="rounded-xl border px-4 py-3 text-sm"
+                placeholder="Work Email"
+                type="email"
+                required
+              />
+
+              {/* Company */}
+              <input
+                className="rounded-xl border px-4 py-3 text-sm md:col-span-2"
+                placeholder="Company Name"
+                required
+              />
+
+              {/* Marketplaces */}
+              <input
+                className="rounded-xl border px-4 py-3 text-sm md:col-span-2"
+                placeholder="Which marketplaces do you sell on? (Amazon, Walmart, eBay, Wayfair, etc.)"
+              />
+
+              {/* SKUs */}
+              <input
+                className="rounded-xl border px-4 py-3 text-sm md:col-span-2"
+                placeholder="Approximate number of SKUs you manage"
+              />
+
+              {/* Challenge */}
+              <textarea
+                className="rounded-xl border px-4 py-3 text-sm md:col-span-2"
+                placeholder="What's your biggest marketplace challenge right now? (Listings, Inventory, Ads, Buy Box, Shipping, etc.)"
+                rows={3}
+              ></textarea>
+
+              <button
+                type="submit"
+                className="rounded-2xl bg-purple-700 text-white px-5 py-3 text-sm font-medium hover:bg-purple-800 md:col-span-2"
+              >
+                Request Demo
+              </button>
             </form>
           </div>
-          <p className="text-xs text-purple-500 mt-4"></p>
         </div>
       </section>
 
       {/* FOOTER */}
       <footer className="py-10 text-center text-sm text-purple-500">
-        © {new Date().getFullYear()} Marketlynxe. All rights reserved.
+        © {new Date().getFullYear()} MarketLynxe. All rights reserved.
       </footer>
     </div>
   );
