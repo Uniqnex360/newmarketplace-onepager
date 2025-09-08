@@ -159,7 +159,7 @@ export default function MarketplaceOnePager() {
             <a href="#integrations" className="hover:text-purple-900">Integrations</a>
             <a href="#dashboard" className="hover:text-purple-900">Dashboard</a>
             <a href="#how" className="hover:text-purple-900">How it works</a>
-            <a href="#faq" className="hover:text-purple-900">FAQ</a>
+            {/* <a href="#faq" className="hover:text-purple-900">FAQ</a> */}
           </nav>
           <div className="flex items-center gap-2">
             <a href="#demo" className="rounded-2xl border border-purple-300 px-4 py-2 text-sm hover:bg-purple-50">Book a Demo</a>
@@ -176,7 +176,7 @@ export default function MarketplaceOnePager() {
         One Command Center.
         <span className="text-purple-700"> Every Marketplace. </span>
       </h1>
-      <p className="mt-4 text-lg text-purple-700/85">
+      <p className="mt-4 text-medium text-purple-700/85">
         Connect Amazon (1P/3P), Walmart, eBay, Wayfair, HomeDepot, and more.
         Instantly track orders, revenue, expenses, and net profit — while
         controlling listings, managing orders, shipping, and fulfillment without
@@ -194,12 +194,12 @@ export default function MarketplaceOnePager() {
           Control listings, pricing & inventory cross-marketplace with real-time sync.
         </li>
         <li className="flex items-start gap-2">
-          <Check className="w-4 h-4 mt-0.5 text-purple-700" />
+          <Check className="w-6 h-4 mt-0.5 text-purple-700" />
           Implement custom business rules tailored to vendors and product categories,
           including custom formulas for COGS, pricing, profit, and other calculations.
         </li>
         <li className="flex items-start gap-2">
-          <Check className="w-4 h-4 mt-0.5 text-purple-700" />
+          <Check className="w-5 h-4 mt-0.5 text-purple-700" />
           Automate order fulfillment with shipping integrations including ShipStation,
           Shippo, Easyship, ShipHero, and more.
         </li>
@@ -311,11 +311,6 @@ export default function MarketplaceOnePager() {
                 </div>
                 <h3 className="mt-4 text-lg font-semibold">{f.title}</h3>
                 <p className="mt-2 text-sm text-purple-700/85">{f.text}</p>
-                <ul className="mt-4 space-y-2 text-sm text-purple-700/85">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Filters by marketplace, brand, SKU</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Export-ready views</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Automations & alerts</li>
-                </ul>
               </div>
             ))}
           </div>
@@ -443,15 +438,6 @@ export default function MarketplaceOnePager() {
                 <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Backorder logic</li>
               </ul>
             </div>
-            <div className="rounded-3xl border p-6">
-              <h3 className="font-semibold">Custom Business Rules</h3>
-              <p className="mt-2 text-sm text-purple-700/85">Implement custom business rules tailored to vendors and product categories, including custom formulas for COGS, pricing, profit, and other calculations.</p>
-              <ul className="mt-4 space-y-2 text-sm text-purple-700/85">
-                <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Custom COGS formulas</li>
-                <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Pricing automation</li>
-                <li className="flex items-center gap-2"><Check className="w-4 h-4" /> Category-specific rules</li>
-              </ul>
-            </div>
           </div>
 
           {/* TESTIMONIALS */}
@@ -490,7 +476,7 @@ export default function MarketplaceOnePager() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="py-16">
+      {/* <section id="faq" className="py-16">
         <div className="mx-auto max-w-5xl px-6">
           <h2 className="text-2xl md:text-3xl font-semibold">Frequently asked questions</h2>
           <div className="mt-8 grid md:grid-cols-2 gap-6">
@@ -502,7 +488,7 @@ export default function MarketplaceOnePager() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CONTACT */}
       <section id="contact" className="py-14 border-t">
@@ -559,7 +545,7 @@ export default function MarketplaceOnePager() {
                 Request Demo
               </button>
             </form>
-          </div>
+          </div>  
         </div>
       </section>
 
