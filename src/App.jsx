@@ -125,10 +125,11 @@ export default function MarketplaceOnePager() {
   <div className="mx-auto max-w-7xl px-6 flex items-center justify-between h-full">
     <div className="flex items-center h-full">
       <img 
-        src="/src/Light purple logo.png" 
-        alt="Marketlynxe Logo" 
-        className="h-16 w-auto mx-auto"
-      />
+  src="/logo.png" 
+  alt="Marketlynxe Logo" 
+  className="h-16 w-auto mx-auto"
+/>
+
     </div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
             <a href="#features" className="hover:text-purple-900">Features</a>
