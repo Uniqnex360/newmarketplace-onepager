@@ -170,60 +170,116 @@ export default function MarketplaceOnePager() {
 
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto max-w-7xl px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-              One Command Center. <span className="text-purple-700">Every Marketplace.</span>
-            </h1>
-            <p className="mt-4 text-lg text-purple-700/85">
-              Connect Amazon (1P/3P), Walmart, eBay, Wayfair, HomeDepot, and more. Instantly track orders, revenue, expenses, and net profit — while controlling listings, managing orders, shipping, and fulfillment without juggling multiple logins. Say goodbye to fragmented tools and spreadsheets. MarketLynxe unifies everything into 360-degree view — including ad performance insights, Buy Box tracking, and seamless third-party integrations with shipping, warehouses, and more — so you never miss an opportunity to grow.
-            </p>
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <a href="#demo" className="inline-flex items-center gap-2 rounded-2xl bg-purple-700 text-white px-5 py-3 text-sm font-medium hover:bg-purple-800">
-                <Zap className="w-4 h-4" /> Book a Demo
-              </a>
-              <a href="#features" className="inline-flex items-center gap-2 rounded-2xl border border-purple-300 px-5 py-3 text-sm font-medium hover:bg-purple-50">
-                See It in Action <ChevronRight className="w-4 h-4" />
-              </a>
-            </div>
-            <div className="mt-8 flex items-center gap-6 text-sm text-purple-600">
-              <div className="flex items-center gap-2"><ShieldCheck className="w-4 h-4" /> Role-based access</div>
-              <div className="flex items-center gap-2"><Workflow className="w-4 h-4" /> Custom business rules</div>
-              <div className="flex items-center gap-2"><Search className="w-4 h-4" /> Buy Box tracking</div>
-            </div>
-          </div>
+  <div className="mx-auto max-w-7xl px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+        One Command Center.
+        <span className="text-purple-700"> Every Marketplace. </span>
+      </h1>
+      <p className="mt-4 text-lg text-purple-700/85">
+        Connect Amazon (1P/3P), Walmart, eBay, Wayfair, HomeDepot, and more.
+        Instantly track orders, revenue, expenses, and net profit — while
+        controlling listings, managing orders, shipping, and fulfillment without
+        juggling multiple logins. Say goodbye to fragmented tools and
+        spreadsheets. MarketLynxe unifies everything into 360-degree view —
+        including ad performance insights, Buy Box tracking, and seamless
+        third-party integrations with shipping, warehouses, and more — so you
+        never miss an opportunity to grow.
+      </p>
 
-          {/* HERO MOCKUP */}
-          <div className="relative">
-            <div className="rounded-3xl border bg-white shadow-xl overflow-hidden">
-              <div className="p-4 border-b flex items-center justify-between">
-                <div className="text-sm font-medium">Executive Dashboard</div>
-                <div className="text-xs text-purple-500">Today</div>
-              </div>
-              <div className="grid md:grid-cols-4 gap-4 p-4">
-                {metrics.map((m) => (
-                  <div key={m.label} className="rounded-2xl border p-4">
-                    <div className="text-xs text-purple-500">{m.label}</div>
-                    <div className="text-2xl font-semibold mt-2">{m.value}</div>
-                  </div>
-                ))}
-              </div>
-              <div className="p-4 border-t">
-                <div className="rounded-2xl border p-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="text-sm font-medium flex items-center gap-2"><LineChart className="w-4 h-4" /> Hourly Performance</div>
-                    <div className="text-xs text-purple-500">Orders vs. Revenue</div>
-                  </div>
-                  {/* Simple SVG sparkline placeholder */}
-                  <svg viewBox="0 0 400 100" className="w-full h-24">
-                    <polyline fill="none" stroke="currentColor" strokeWidth="2" points="0,80 40,70 80,72 120,60 160,50 200,55 240,40 280,42 320,30 360,35 400,20" />
-                  </svg>
-                </div>
-              </div>
+      {/* 🔹 Added value bullets */}
+      <ul className="mt-6 space-y-2 text-purple-700/85 text-sm">
+        <li className="flex items-start gap-2">
+          <Check className="w-4 h-4 mt-0.5 text-purple-700" />
+          Control listings, pricing & inventory cross-marketplace with real-time sync.
+        </li>
+        <li className="flex items-start gap-2">
+          <Check className="w-4 h-4 mt-0.5 text-purple-700" />
+          Implement custom business rules tailored to vendors and product categories,
+          including custom formulas for COGS, pricing, profit, and other calculations.
+        </li>
+        <li className="flex items-start gap-2">
+          <Check className="w-4 h-4 mt-0.5 text-purple-700" />
+          Automate order fulfillment with shipping integrations including ShipStation,
+          Shippo, Easyship, ShipHero, and more.
+        </li>
+        <li className="flex items-start gap-2">
+          <Check className="w-4 h-4 mt-0.5 text-purple-700" />
+          Monitor ad performance (CPC, ROAS, spend vs conversions) plus SKU-level profitability.
+        </li>
+        <li className="flex items-start gap-2">
+          <Check className="w-4 h-4 mt-0.5 text-purple-700" />
+          Track Buy Box performance and suppression risks.
+        </li>
+      </ul>
+
+      <div className="mt-6 flex flex-wrap items-center gap-3">
+        <a
+          href="#demo"
+          className="inline-flex items-center gap-2 rounded-2xl bg-purple-700 text-white px-5 py-3 text-sm font-medium hover:bg-purple-800"
+        >
+          <Zap className="w-4 h-4" /> Book a Demo
+        </a>
+        <a
+          href="#features"
+          className="inline-flex items-center gap-2 rounded-2xl border border-purple-300 px-5 py-3 text-sm font-medium hover:bg-purple-50"
+        >
+          See it in action <ChevronRight className="w-4 h-4" />
+        </a>
+      </div>
+
+      <div className="mt-8 flex items-center gap-6 text-sm text-purple-600">
+        <div className="flex items-center gap-2">
+          <ShieldCheck className="w-4 h-4" /> Role-based access
+        </div>
+        <div className="flex items-center gap-2">
+          <Workflow className="w-4 h-4" /> Automation rules
+        </div>
+        <div className="flex items-center gap-2">
+          <Search className="w-4 h-4" /> Advanced filters
+        </div>
+      </div>
+    </div>
+
+    {/* HERO MOCKUP */}
+    <div className="relative">
+      <div className="rounded-3xl border bg-white shadow-xl overflow-hidden">
+        <div className="p-4 border-b flex items-center justify-between">
+          <div className="text-sm font-medium">Executive Dashboard</div>
+          <div className="text-xs text-purple-500">Today</div>
+        </div>
+        <div className="grid md:grid-cols-4 gap-4 p-4">
+          {metrics.map((m) => (
+            <div key={m.label} className="rounded-2xl border p-4">
+              <div className="text-xs text-purple-500">{m.label}</div>
+              <div className="text-2xl font-semibold mt-2">{m.value}</div>
             </div>
+          ))}
+        </div>
+        <div className="p-4 border-t">
+          <div className="rounded-2xl border p-4">
+            <div className="flex items-center justify-between mb-3">
+              <div className="text-sm font-medium flex items-center gap-2">
+                <LineChart className="w-4 h-4" /> Hourly Performance
+              </div>
+              <div className="text-xs text-purple-500">Orders vs. Revenue</div>
+            </div>
+            {/* Simple SVG sparkline placeholder */}
+            <svg viewBox="0 0 400 100" className="w-full h-24">
+              <polyline
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                points="0,80 40,70 80,72 120,60 160,50 200,55 240,40 280,42 320,30 360,35 400,20"
+              />
+            </svg>
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* INTEGRATIONS */}
       <section id="integrations" className="py-14 bg-white border-y">
