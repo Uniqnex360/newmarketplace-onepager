@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   BarChart3,
   Boxes,
@@ -18,16 +18,53 @@ import {
   Workflow,
   BellRing,
   Megaphone,
+  TrendingUp,
 } from "lucide-react";
 
 // One-page micro-site for a Marketplace Management Portal
 // TailwindCSS required. Paste into your React project and ensure Tailwind is configured.
 
 const integrations = [
-  { name: "Amazon 1P & 3P", icon: <ShoppingCart className="w-5 h-5" /> },
-  { name: "Walmart", icon: <ShoppingCart className="w-5 h-5" /> },
-  { name: "eBay", icon: <Globe2 className="w-5 h-5" /> },
-  { name: "Wayfair", icon: <Globe2 className="w-5 h-5" /> },
+  {
+    name: "Amazon 1P & 3P",
+    icon: (
+      <img
+        src="/public/amazon-svgrepo-com.svg"
+        alt="Amazon"
+        className="w-5 h-5 object-contain"
+      />
+    ),
+  },
+  {
+    name: "Walmart",
+    icon: (
+      <img
+        src="/public/walmart-svgrepo-com.svg"
+        alt="Walmart"
+        className="w-5 h-5 object-contain"
+      />
+    ),
+  },
+  {
+    name: "eBay",
+    icon: (
+      <img
+        src="/public/ebay-svgrepo-com.svg"
+        alt="Ebay"
+        className="w-5 h-5 object-contain"
+      />
+    ),
+  },
+  {
+    name: "Wayfair",
+    icon: (
+      <img
+        src="/public/Wayfair_logo.svg"
+        alt="Ebay"
+        className="w-5 h-5 object-contain"
+      />
+    ),
+  },
   { name: "HomeDepot", icon: <Globe2 className="w-5 h-5" /> },
   { name: "More via API", icon: <Settings className="w-5 h-5" /> },
 ];
@@ -61,7 +98,7 @@ const features = [
     text: "Your P&L rolls up fees, taxes, refunds, promotions, shipping & ad cost — showing net margin by SKU, brand, and marketplace. Stop guessing profitability; see it clearly.",
   },
   {
-    icon: <Database className="w-6 h-6" />,
+    icon: <TrendingUp className="w-6 h-6" />,
     title: "Ad Performance & ROI Insights",
     text: "Track CPC, ad spend vs ROI, impressions, clicks, conversions — all tied to individual SKUs and channels.",
   },
@@ -80,6 +117,16 @@ const features = [
     title: "Role-Based Access",
     text: "Control user permissions with role-based access — manage who can edit listings, fulfill orders, update pricing, and view financial data.",
   },
+  {
+    icon: <Truck className="w-6 h-6" />,
+    title: "Shipping Integrations",
+    text: "Generate labels directly from your carrier and pull tracking details and shipping charges into MarketLynxe, so you can manage fulfillment without leaving the platform.",
+  },
+  {
+    icon: <Boxes className="w-6 h-6" />,
+    title: "Smarter Warehouse Control:",
+    text: "Set buffers, safety stock, and marketplace-specific thresholds with multi-warehouse support, kitting, and bundle management to keep inventory synchronized and reliable across every channel. ",
+  },
 ];
 
 const steps = [
@@ -96,7 +143,7 @@ const steps = [
   {
     step: 3,
     title: "Launch Everywhere",
-    text: "Publish once, sell everywhere.",
+    text: "Publish once, sell everywhere — seamless omnichannel experience across marketplaces.",
   },
   {
     step: 4,
@@ -181,21 +228,26 @@ const whyMarketLynxe = [
 ];
 
 export default function MarketplaceOnePager() {
+  const [selectedMarketplace, setSelectedMarketplace] = useState("");
+  const [customMarketplace, setCustomMarketplace] = useState("");
+
+  const handleMarketplaceChange = (e) => {
+    const value = e.target.value;
+    setSelectedMarketplace(value);
+    if (value !== "Other") setCustomMarketplace("");
+  };
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-purple-50 to-white text-purple-900">
       {/* NAVBAR */}
-      <header
-        id="hero"
-        className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-purple-200 h-20"
-      >
+      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-purple-200 h-20">
         <div className="mx-auto max-w-7xl px-6 flex items-center justify-between h-full">
           <div className="flex items-center h-full">
             <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
+              href="#hero"
+              // onClick={(e) => {
+              //   e.preventDefault();
+              //   window.scrollTo({ top: 0, behavior: "smooth" });
+              // }}
             >
               <img
                 src="/shared image.jpeg"
@@ -224,7 +276,7 @@ export default function MarketplaceOnePager() {
               href="#demo"
               className="rounded-2xl border border-purple-300 px-4 py-2 text-sm hover:bg-purple-50"
             >
-              Book a Demo
+              business@marketlynxe.com
             </a>
             <a
               href="#contact"
@@ -237,7 +289,7 @@ export default function MarketplaceOnePager() {
       </header>
 
       {/* HERO */}
-      <section className="relative overflow-hidden">
+      <section id="hero" className="relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold leading-tight">
@@ -356,7 +408,7 @@ export default function MarketplaceOnePager() {
       {/* INTEGRATIONS */}
       <section id="integrations" className="py-14 bg-white border-y">
         <div className="mx-auto max-w-7xl px-6">
-          <p className="text-xs uppercase tracking-wider text-purple-500">
+          <p className="text-s uppercase tracking-wider text-purple-500">
             Connect
           </p>
           <h2 className="text-2xl md:text-3xl font-semibold mt-2">
@@ -379,27 +431,23 @@ export default function MarketplaceOnePager() {
         </div>
       </section>
       {/* VIDEO / DEMO SECTION */}
-      <section className="py-16 bg-purple-100">
+<section className="pt-6 pb-1 bg-purple-100">
         <div className="mx-auto max-w-7xl px-6 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold text-purple-900">
-            Stop juggling logins.
+             Watch the demo to experience the platform in action.
           </h2>
-          <p className="mt-4 text-purple-700/85 text-lg">
+          {/* <p className="mt-2 text-purple-700/85 text-lg">
             See how MarketLynxe unifies marketplaces, listings, ads, and
             shipping into one holistic dashboard.
-          </p>
-          <p className="mt-2 text-purple-700/85 text-lg">
-            Watch the demo to experience the platform in action.
-          </p>
+          </p> */}
 
-          <div className="mt-6 flex justify-center">
+          <div className="flex justify-center">
             <div
               className="relative w-full lg:w-4/5 xl:w-3/4 2xl:w-2/3"
-              style={{ paddingBottom: "56.25%" }}
+              style={{ paddingBottom: "50.25%" }}
             >
               <iframe
-                      src="https://player.vimeo.com/video/1116998171"
-
+                src="https://player.vimeo.com/video/1116998171"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowFullScreen
@@ -414,7 +462,7 @@ export default function MarketplaceOnePager() {
       {/* FEATURES GRID */}
       <section id="features" className="py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <p className="text-xs uppercase tracking-wider text-purple-500">
+          <p className="text-s uppercase tracking-wider text-purple-500">
             Capabilities
           </p>
           <h2 className="text-2xl md:text-3xl font-semibold mt-2">
@@ -442,7 +490,7 @@ export default function MarketplaceOnePager() {
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <p className="text-xs uppercase tracking-wider text-purple-500">
+              <p className="text-s uppercase tracking-wider text-purple-500">
                 Executive View
               </p>
               <h2 className="text-2xl md:text-3xl font-semibold mt-2">
@@ -526,7 +574,7 @@ export default function MarketplaceOnePager() {
       {/* HOW IT WORKS */}
       <section id="how" className="py-16">
         <div className="mx-auto max-w-7xl px-6">
-          <p className="text-xs uppercase tracking-wider text-purple-500">
+          <p className="text-s uppercase tracking-wider text-purple-500">
             Workflow
           </p>
           <h2 className="text-2xl md:text-3xl font-semibold mt-2">
@@ -549,7 +597,7 @@ export default function MarketplaceOnePager() {
       {/* WHY MARKETLYNXE */}
       <section className="py-16 bg-purple-50">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-2xl md:text-3xl font-semibold text-center">
+          <h2 className="text-2xl md:text-3xl font-semibold">
             Why MarketLynxe?
           </h2>
           <div className="grid md:grid-cols-3 gap-6 mt-8">
@@ -567,64 +615,7 @@ export default function MarketplaceOnePager() {
         </div>
       </section>
 
-      {/* SOCIAL PROOF / REFERENCES */}
-      <section className="py-14 bg-white border-t">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-2xl md:text-3xl font-semibold text-center mb-8">
-            Built for Marketplaces to Drive Digital Growth
-          </h2>
-          <p className="text-center text-purple-700/85 mb-12 max-w-3xl mx-auto">
-            MarketLynxe is inspired by the best tools in the industry but
-            designed to keep things simple. With quick channel setup and
-            seamless API connections, your team can get started quickly without
-            technical headaches. Everything you need to connect marketplaces,
-            unify data, and manage operations comes together in one
-            comprehensive command center.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-6 items-start mb-12">
-            <div className="rounded-3xl border p-6">
-              <h3 className="font-semibold">Shipping Integrations</h3>
-              <p className="mt-2 text-sm text-purple-700/85">
-                Generate labels directly from your carrier and pull tracking
-                details and shipping charges into MarketLynxe, so you can manage
-                fulfillment without leaving the platform.
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2 text-xs">
-                {["UPS", "FedEx", "USPS", "DHL", "Shippo API"].map((c) => (
-                  <span key={c} className="rounded-full border px-3 py-1">
-                    {c}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-3xl border p-6">
-              <h3 className="font-semibold">Inventory Rules</h3>
-              <p className="mt-2 text-sm text-purple-700/85">
-                Set buffers, safety stock, and marketplace-specific thresholds
-                to keep your listings accurate and prevent overselling. With
-                multi-warehouse support, kitting, and bundle management,
-                MarketLynxe ensures your inventory stays synchronized and
-                reliable across every channel.
-              </p>
-            </div>
-          </div>
-
-          {/* TESTIMONIALS */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="rounded-3xl border p-6 bg-purple-50">
-                <p className="text-sm text-purple-700/85 italic">
-                  "{testimonial.quote}"
-                </p>
-                <p className="mt-4 text-sm font-medium">
-                  — {testimonial.author}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+  
 
       {/* CTA */}
       <section id="demo" className="py-16 bg-purple-700 text-white">
@@ -644,12 +635,12 @@ export default function MarketplaceOnePager() {
               >
                 Get Started
               </a>
-              <a
+              {/* <a
                 href="#faq"
                 className="rounded-2xl border border-white/20 px-5 py-3 text-sm font-medium hover:bg-white/10"
               >
                 See FAQs
-              </a>
+              </a> */}
             </div>
           </div>
           <div className="rounded-3xl bg-white/10 border border-white/10 p-6">
@@ -691,22 +682,35 @@ export default function MarketplaceOnePager() {
       <section id="contact" className="py-14 border-t">
         <div className="mx-auto max-w-4xl px-6">
           <div className="rounded-3xl border p-6">
-            <h2 className="text-2xl font-semibold">Book a Demo</h2>
+<h2 className="text-2xl font-semibold text-center">Book a Demo</h2>
             <p className="mt-2 text-sm text-purple-700/85">
               Tell us a bit about your business and we'll tailor the demo to
               your needs.
             </p>
+
             <form className="mt-6 grid md:grid-cols-2 gap-4">
-              {/* Name & Email */}
+              {/* First Name */}
               <input
                 className="rounded-xl border px-4 py-3 text-sm"
-                placeholder="Full Name"
+                placeholder="First Name"
+                name="firstName"
                 required
               />
+
+              {/* Last Name */}
               <input
                 className="rounded-xl border px-4 py-3 text-sm"
+                placeholder="Last Name"
+                name="lastName"
+                required
+              />
+
+              {/* Email */}
+              <input
+                className="rounded-xl border px-4 py-3 text-sm md:col-span-2"
                 placeholder="Work Email"
                 type="email"
+                name="email"
                 required
               />
 
@@ -714,28 +718,45 @@ export default function MarketplaceOnePager() {
               <input
                 className="rounded-xl border px-4 py-3 text-sm md:col-span-2"
                 placeholder="Company Name"
+                name="company"
                 required
               />
 
-              {/* Marketplaces */}
-              <input
-                className="rounded-xl border px-4 py-3 text-sm md:col-span-2"
-                placeholder="Which marketplaces do you sell on? (Amazon, Walmart, eBay, Wayfair, etc.)"
-              />
+              {/* Marketplace Dropdown */}
+              <div className="md:col-span-2">
+                <label className="block text-sm text-purple-700 mb-1">
+                  Which marketplace do you sell on?
+                </label>
+                <select
+                  className="w-full rounded-xl border px-4 py-3 text-sm"
+                  name="marketplace"
+                  value={selectedMarketplace}
+                  onChange={handleMarketplaceChange}
+                  required
+                >
+                  <option value="">Select one...</option>
+                  <option value="Amazon">Amazon</option>
+                  <option value="Walmart">Walmart</option>
+                  <option value="eBay">eBay</option>
+                  <option value="Wayfair">Wayfair</option>
+                  <option value="HomeDepot">HomeDepot</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
 
-              {/* SKUs */}
-              <input
-                className="rounded-xl border px-4 py-3 text-sm md:col-span-2"
-                placeholder="Approximate number of SKUs you manage"
-              />
+              {/* Show if Other is selected */}
+              {selectedMarketplace === "Other" && (
+                <input
+                  className="rounded-xl border px-4 py-3 text-sm md:col-span-2"
+                  placeholder="Please specify other marketplace(s)"
+                  name="customMarketplace"
+                  value={customMarketplace}
+                  onChange={(e) => setCustomMarketplace(e.target.value)}
+                  required
+                />
+              )}
 
-              {/* Challenge */}
-              <textarea
-                className="rounded-xl border px-4 py-3 text-sm md:col-span-2"
-                placeholder="What's your biggest marketplace challenge right now? (Listings, Inventory, Ads, Buy Box, Shipping, etc.)"
-                rows={3}
-              ></textarea>
-
+              {/* Button */}
               <button
                 type="submit"
                 className="rounded-2xl bg-purple-700 text-white px-5 py-3 text-sm font-medium hover:bg-purple-800 md:col-span-2"
