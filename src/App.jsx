@@ -30,7 +30,7 @@ const integrations = [
     name: "Amazon 1P & 3P",
     icon: (
       <img
-        src="/public/amazon-svgrepo-com.svg"
+        src="/amazon-svgrepo-com.svg"
         alt="Amazon"
         className="w-5 h-5 object-contain"
       />
@@ -40,7 +40,7 @@ const integrations = [
     name: "Walmart",
     icon: (
       <img
-        src="/public/walmart-svgrepo-com.svg"
+        src="/walmart-svgrepo-com.svg"
         alt="Walmart"
         className="w-5 h-5 object-contain"
       />
@@ -50,7 +50,7 @@ const integrations = [
     name: "eBay",
     icon: (
       <img
-        src="/public/ebay-svgrepo-com.svg"
+        src="/ebay-svgrepo-com.svg"
         alt="Ebay"
         className="w-5 h-5 object-contain"
       />
@@ -60,7 +60,7 @@ const integrations = [
     name: "Wayfair",
     icon: (
       <img
-        src="/public/Wayfair_logo.svg"
+        src="/Wayfair_logo.svg"
         alt="Ebay"
         className="w-5 h-5 object-contain"
       />
@@ -275,7 +275,7 @@ export default function MarketplaceOnePager() {
           <div className="flex items-center gap-2">
             <a
             href="mailto:business@marketlynxe.com"
-              className="flex items-center gap-2 rounded-2xl border border-purple-300 px-4 py-2 text-sm hover:bg-purple-50"
+              className="flex items-center gap-2 rounded-2xl px-4 py-2 text-sm hover:bg-purple-50"
       >
               <Mail className="h-4 w-4 text-purple-500"/>
               business@marketlynxe.com
@@ -435,9 +435,9 @@ export default function MarketplaceOnePager() {
       {/* VIDEO / DEMO SECTION */}
       <section className="pt-6 pb-1 bg-purple-100">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <h3 className="text-2xl md:text-s font-semibold text-purple-900">Built for modern marketplace teams</h3>
-            <p className="mt-2 text-sm text-purple-700/85">MarketLynxe is inspired by the best tools in the industry but designed to keep things simple. With quick channel setup and seamless API connections, your team can get started quickly without technical headaches. Everything you need to connect marketplaces, unify data, and manage operations comes together in one comprehensive command center. </p>
-          <h2 className="mt-2 font-semibold text-purple-900">
+          <h3 className="text-2xl md:text-3xl font-semibold mt-2">Built for modern marketplace teams</h3>
+            <p className="mt-2 text-s text-purple-700/85">MarketLynxe is inspired by the best tools in the industry but designed to keep things simple. With quick channel setup and seamless API connections, your team can get started quickly without technical headaches. Everything you need to connect marketplaces, unify data, and manage operations comes together in one comprehensive command center. </p>
+          <h2 className="mt-2 text-2xl font-semibold text-purple-900">
             Watch the demo to experience the platform in action.
           </h2>
           {/* <p className="mt-2 text-purple-700/85 text-lg">
