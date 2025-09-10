@@ -66,7 +66,14 @@ const integrations = [
       />
     ),
   },
-  { name: "HomeDepot", icon: <Globe2 className="w-5 h-5" /> },
+  { name: "HomeDepot", 
+   icon: (
+      <img
+        src="/the-home-depot-seeklogo.png"
+        alt="Ebay"
+        className="w-5 h-5 object-contain"
+      />
+    ),},
   { name: "More via API", icon: <Settings className="w-5 h-5" /> },
 ];
 
