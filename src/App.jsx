@@ -19,6 +19,7 @@ import {
   BellRing,
   Megaphone,
   TrendingUp,
+  Mail,
 } from "lucide-react";
 
 // One-page micro-site for a Marketplace Management Portal
@@ -228,7 +229,7 @@ const whyMarketLynxe = [
 ];
 
 export default function MarketplaceOnePager() {
-  const [selectedMarketplace, setSelectedMarketplace] = useState("");
+  const [selectedMarketplace, setSelectedMarketplace] = useState([]);
   const [customMarketplace, setCustomMarketplace] = useState("");
 
   const handleMarketplaceChange = (e) => {
@@ -273,9 +274,10 @@ export default function MarketplaceOnePager() {
           </nav>
           <div className="flex items-center gap-2">
             <a
-              href="#demo"
-              className="rounded-2xl border border-purple-300 px-4 py-2 text-sm hover:bg-purple-50"
-            >
+            href="mailto:business@marketlynxe.com"
+              className="flex items-center gap-2 rounded-2xl border border-purple-300 px-4 py-2 text-sm hover:bg-purple-50"
+      >
+              <Mail className="h-4 w-4 text-purple-500"/>
               business@marketlynxe.com
             </a>
             <a
@@ -431,10 +433,12 @@ export default function MarketplaceOnePager() {
         </div>
       </section>
       {/* VIDEO / DEMO SECTION */}
-<section className="pt-6 pb-1 bg-purple-100">
+      <section className="pt-6 pb-1 bg-purple-100">
         <div className="mx-auto max-w-7xl px-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-semibold text-purple-900">
-             Watch the demo to experience the platform in action.
+          <h3 className="text-2xl md:text-s font-semibold text-purple-900">Built for modern marketplace teams</h3>
+            <p className="mt-2 text-sm text-purple-700/85">MarketLynxe is inspired by the best tools in the industry but designed to keep things simple. With quick channel setup and seamless API connections, your team can get started quickly without technical headaches. Everything you need to connect marketplaces, unify data, and manage operations comes together in one comprehensive command center. </p>
+          <h2 className="mt-2 font-semibold text-purple-900">
+            Watch the demo to experience the platform in action.
           </h2>
           {/* <p className="mt-2 text-purple-700/85 text-lg">
             See how MarketLynxe unifies marketplaces, listings, ads, and
@@ -615,8 +619,6 @@ export default function MarketplaceOnePager() {
         </div>
       </section>
 
-  
-
       {/* CTA */}
       <section id="demo" className="py-16 bg-purple-700 text-white">
         <div className="mx-auto max-w-7xl px-6 grid md:grid-cols-2 gap-10 items-center">
@@ -682,8 +684,8 @@ export default function MarketplaceOnePager() {
       <section id="contact" className="py-14 border-t">
         <div className="mx-auto max-w-4xl px-6">
           <div className="rounded-3xl border p-6">
-<h2 className="text-2xl font-semibold text-center">Book a Demo</h2>
-            <p className="mt-2 text-sm text-purple-700/85">
+            <h2 className="text-2xl font-semibold text-center">Book a Demo</h2>
+            <p className="mt-2 text-sm text-center text-purple-700/85">
               Tell us a bit about your business and we'll tailor the demo to
               your needs.
             </p>
@@ -727,25 +729,29 @@ export default function MarketplaceOnePager() {
                 <label className="block text-sm text-purple-700 mb-1">
                   Which marketplace do you sell on?
                 </label>
-                <select
-                  className="w-full rounded-xl border px-4 py-3 text-sm"
-                  name="marketplace"
-                  value={selectedMarketplace}
-                  onChange={handleMarketplaceChange}
-                  required
-                >
-                  <option value="">Select one...</option>
-                  <option value="Amazon">Amazon</option>
-                  <option value="Walmart">Walmart</option>
-                  <option value="eBay">eBay</option>
-                  <option value="Wayfair">Wayfair</option>
-                  <option value="HomeDepot">HomeDepot</option>
-                  <option value="Other">Other</option>
-                </select>
-              </div>
+                <div className="grid grid-cols-2 gap-2">
+                  {["Amazon","Walmart","eBay","Wayfair",'HomeDepot','TikTok',"Other"].map((market)=>(
+                    <label   key={market} className="flex items-center gap-2 rounded-xl border p-3 hover:bg-purple-50 cursor-pointer">
+                      <input type="checkbox" value={market}
+                      checked={selectedMarketplace.includes(market)} onChange={(e)=>{
+                        if(e.target.checked)
+                        {
+                          setSelectedMarketplace([...selectedMarketplace,market])
 
-              {/* Show if Other is selected */}
-              {selectedMarketplace === "Other" && (
+                        }
+                        else
+                        {
+                          setSelectedMarketplace(
+                            selectedMarketplace.filter((m)=>m!==market)
+                          )
+                        }
+                      }}
+                      />
+                      <span className="text-sm">{market}</span>
+                    </label>
+                  ))}
+                </div>
+              {selectedMarketplace.includes("Other") && (
                 <input
                   className="rounded-xl border px-4 py-3 text-sm md:col-span-2"
                   placeholder="Please specify other marketplace(s)"
@@ -755,6 +761,9 @@ export default function MarketplaceOnePager() {
                   required
                 />
               )}
+              </div>
+
+              
 
               {/* Button */}
               <button
@@ -769,7 +778,7 @@ export default function MarketplaceOnePager() {
       </section>
 
       {/* FOOTER */}
-      <footer className="py-10 text-center text-sm text-purple-500">
+      <footer className="tecenterxt- text-sm text-purple-500">
         © {new Date().getFullYear()} MarketLynxe. All rights reserved.
       </footer>
     </div>
