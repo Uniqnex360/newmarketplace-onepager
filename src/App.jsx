@@ -444,7 +444,7 @@ export default function MarketplaceOnePager() {
         <div className="mx-auto max-w-7xl px-6 text-center">
           <h3 className="text-2xl md:text-3xl font-semibold mt-2">Built for modern marketplace teams</h3>
             <p className="mt-2 text-s text-purple-700/85">MarketLynxe is inspired by the best tools in the industry but designed to keep things simple. With quick channel setup and seamless API connections, your team can get started quickly without technical headaches. Everything you need to connect marketplaces, unify data, and manage operations comes together in one comprehensive command center. </p>
-          <h2 className="mt-2 text-2xl font-semibold text-purple-700/85">
+          <h2 className="mt-2  font-semibold text-purple-700/85">
             Watch the demo to experience the platform in action.
           </h2>
           {/* <p className="mt-2 text-purple-700/85 text-lg">
