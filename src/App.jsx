@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   BarChart3,
   Boxes,
@@ -238,7 +238,37 @@ const whyMarketLynxe = [
 export default function MarketplaceOnePager() {
   const [selectedMarketplace, setSelectedMarketplace] = useState([]);
   const [customMarketplace, setCustomMarketplace] = useState("");
+  const [status, setStatus] = useState("idle");
 
+  const handleSubmit=async(e)=>{
+    e.preventDefault()
+    setStatus('loading')
+    const formData=new FormData(e.target)
+    const response=await fetch("https://formspree.io/f/xyzdoakn",{
+      method:"POST",
+      body:formData,
+      headers:{Accept:'application/json'}
+    })
+    if(response.ok)
+    {
+      setStatus('success')
+      e.target.reset()
+    }
+    else
+    {
+      setStatus('error')
+    }
+  }
+  useEffect(()=>{
+    if(status==='success'||status==='error')
+    {
+      const timer=setTimeout(()=>{
+        setStatus('idle')
+      },5000)
+      return ()=>clearTimeout(timer)
+    }
+  },[status])
+  
   const handleMarketplaceChange = (e) => {
     const value = e.target.value;
     setSelectedMarketplace(value);
@@ -569,7 +599,7 @@ export default function MarketplaceOnePager() {
                       </div>
                       <div className="col-span-2">$129.90</div>
                       <div className="col-span-2">
-                        <a className="text-purple-700 hover:underline" href="#">
+                        <a className="text-purple-700">
                           Ship
                         </a>
                       </div>
@@ -697,8 +727,10 @@ export default function MarketplaceOnePager() {
               your needs.
             </p>
 
-            <form className="mt-6 grid md:grid-cols-2 gap-4">
+            <form  onSubmit={handleSubmit} className="mt-6 grid md:grid-cols-2 gap-4">
               {/* First Name */}
+              <input type="hidden" name="_subject" value="New Request from MarketLynxe" />
+
               <input
                 className="rounded-xl border px-4 py-3 text-sm"
                 placeholder="First Name"
@@ -769,6 +801,11 @@ export default function MarketplaceOnePager() {
                 />
               )}
               </div>
+               <input
+          type="hidden"
+          name="marketplaces"
+          value={selectedMarketplace.join(", ") + (customMarketplace ? `, ${customMarketplace}` : "")}
+        />
 
               
 
@@ -777,9 +814,15 @@ export default function MarketplaceOnePager() {
                 type="submit"
                 className="rounded-2xl bg-purple-700 text-white px-5 py-3 text-sm font-medium hover:bg-purple-800 md:col-span-2"
               >
-                Request Demo
+                {status==='loading'?"Sending...":"Request Demo"}
               </button>
             </form>
+            {status==='success' && (
+              <p className="mt-4 text-green-600 text-center">Thanks! Your request has been submitted</p>
+            )}
+            {status==='error' && (
+              <p className="mt-4 text-green-600 text-center">Oops, something went wrong. Please try again</p>
+            )}
           </div>
         </div>
       </section>
