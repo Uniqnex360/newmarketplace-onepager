@@ -277,7 +277,7 @@ export default function MarketplaceOnePager() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-b from-purple-50 to-white text-purple-900">
       {/* NAVBAR */}
-      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-purple-200 h-20">
+      <header className="sticky top-0 z-40 bg-white border-b border-purple-200 h-20">
         <div className="mx-auto max-w-7xl px-6 flex items-center justify-between h-full">
           <div className="flex items-center h-full">
             <a
